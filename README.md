@@ -1,16 +1,56 @@
-# React + Vite
+# 🇺🇳 Flag Guesser — A React Flag Guessing Game
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple and fun React game to **guess the country from its flag**. Players are shown a random flag and must choose the correct country name. Great for learning geography and testing your flag knowledge!
 
-Currently, two official plugins are available:
+👉 Live site: https://flaguesser.netlify.app/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
+![Screenshot](public/screenshot.png)
+---
 
-## React Compiler
+## 🚀 Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- 📍 Random flag selection  
+- 🎯 Guess the correct country from multiple choices  
+- 🧠 Fun way to learn flags & geography  
+- ⚡ Built with React and modern tooling  
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🧱 Technologies
+
+This project uses:
+
+- **React**  
+- **JavaScript / JSX**  
+- **CSS / Tailwind**  
+- **Vite**  
+- Flag emoji
+
+---
+
+## 🧪 How to Play
+
+1. The game displays a random flag.  
+2. Select the correct country name from the choices.  
+3. Points are scored for correct answers.  
+4. Try to beat your score! 🏆
+
+---
+
+## 📦 Installation
+
+Clone the repo:
+
+```bash
+git clone https://github.com/yourusername/flaguesser.git
+cd flaguesser
+npm install
+npm run dev
+```
+
+---
+
+## 📝 License
+
+This project is licensed under the MIT License.
