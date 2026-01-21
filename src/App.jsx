@@ -30,14 +30,15 @@ export default function FlagGame() {
   };
 
   const getRandomNames = (arr, correctName) => {
-    const shuffled = [...arr].sort(() => 0.5 - Math.random()).slice(0, 3);
+    const filtered = arr.filter(item => item.name !== correctName);
+    const shuffled = [...filtered].sort(() => 0.5 - Math.random()).slice(0, 3);
     const names = shuffled.map(item => item.name);
-  
-    const coorectNamePos = Math.floor(Math.random() * (names.length + 1));
-    names.splice(coorectNamePos, 0, correctName);
-  
+
+    const correctNamePos = Math.floor(Math.random() * (names.length + 1));
+    names.splice(correctNamePos, 0, correctName);
+
     return names;
-  };
+};
 
   const handleAnswer = (answer) => {
     if (selectedAnswer !== null) return;
@@ -48,7 +49,6 @@ export default function FlagGame() {
 
     if (answer === currentFlag.name) {
       setScore(prev => prev + 1);
-      setFeedback('Correct! 🎉');
     } else {
       setFeedback(`Wrong! It was ${currentFlag.name}`);
       setCurrentFlag(null);
@@ -74,10 +74,10 @@ export default function FlagGame() {
 
   if (!currentFlag) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center p-4">
+      <div className="min-h-screen bg-linear-to-br from-blue-500 to-purple-600 flex items-center justify-center p-4">
         <div className="bg-white rounded-2xl shadow-2xl p-8 max-w-md w-full text-center">
           <h1 className="text-3xl font-bold mb-4">Game Complete! 🎊</h1>
-          <p className="text-xl mb-2">Final Score: {score} / {questionsAsked}</p>
+          <p className="text-xl mb-2">Final Score: {score}</p>
           <p className="text-lg mb-6">
             {score === questionsAsked ? 'Perfect score! 🏆' : 
              score >= questionsAsked * 0.7 ? 'Great job! 🌟' : 
@@ -85,7 +85,7 @@ export default function FlagGame() {
           </p>
           <button
             onClick={resetGame}
-            className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-8 py-3 rounded-lg font-semibold hover:shadow-lg transition-all"
+            className="bg-linear-to-r from-blue-500 to-purple-600 text-white px-8 py-3 rounded-lg font-semibold hover:shadow-lg transition-all"
           >
             Play Again
           </button>
@@ -95,13 +95,12 @@ export default function FlagGame() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center p-4">
+    <div className="min-h-screen bg-linear-to-br from-blue-500 to-purple-600 flex items-center justify-center p-4">
       <div className="bg-white rounded-2xl shadow-2xl p-8 max-w-md w-full">
-        <div className="flex justify-between items-center mb-6">
-          <h1 className="text-2xl font-bold text-gray-800">Guess the Flag!</h1>
+        <div className="flex justify-end items-center mb-6">
           <div className="text-right">
             <p className="text-sm text-gray-600">Score</p>
-            <p className="text-2xl font-bold text-purple-600">{score}/{questionsAsked}</p>
+            <p className="text-2xl font-bold text-purple-600">{score}</p>
           </div>
         </div>
 
